@@ -13,7 +13,7 @@ print(x+y)
 x=5
 y=10
 z=x+y
-print(x)
+print(z)
 
 #ex 5
 x,y,z="Orange","Banana","Cherry"
