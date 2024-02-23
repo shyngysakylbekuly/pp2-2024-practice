@@ -1,0 +1,142 @@
+#ex 1
+import re
+def match_pattern(text):
+    pattern=re.compile(r'ab*')
+    if pattern.fullmatch(text):
+        return True
+    else:
+        return False
+
+with open("lab 5/row.txt","r") as file:
+   x=file.read()
+
+print(match_pattern(x))
+
+
+#ex 2
+import re
+def match_pattern(text):
+    pattern=re.compile(r'abb')
+    if pattern.fullmatch(text):
+        return True
+    else:
+        return False
+
+with open ("lab 5/row.txt","r") as file:
+   x=file.read()
+
+print(match_pattern(x))
+
+
+#ex 3
+import re
+def find_sequences(text):
+    pattern=re.compile(r'[a-z]+_[a+z]+')
+    sequences=pattern.findall(text)
+    return sequences
+    
+with open("lab 5/row.txt","r") as file:
+   x=file.read()
+
+
+sequences=find_sequences(x)
+if sequences:
+    print(sequences)
+else:
+    print("NO SEQUENCES")
+
+#ex 4
+import re
+def find_sequences(text):
+    pattern=re.compile(r'[A-Z][a+z]+')
+    sequences=pattern.findall(text)
+    return sequences
+    
+
+with open("lab 5/row.txt","r") as file:
+   x=file.read()
+sequences=find_sequences(x)
+if sequences:
+    print(sequences)
+else:
+    print("NO SEQUENCES")
+
+
+#ex 5
+
+import re
+def find_sequences(text):
+    pattern=re.compile(r'.a[a-z]*b')
+    sequences=pattern.findall(text)
+    return sequences
+    
+with open ("lab 5/row.txt","r") as file:
+   x=file.read()
+sequences=find_sequences(x)
+if sequences:
+    print(sequences)
+else:
+    print("NO SEQUENCES")    
+
+
+
+#ex 6
+with open("lab 5/row.txt", "r") as file:
+    txt=file.read()
+x=txt.replace(" ",":").replace(",",":" ).replace(".",":")
+with open ("lab 5/row.txt","w") as file:
+    file.write(x)
+print(x)
+
+
+
+#ex 7
+def snaketocamel(snakecase):
+    parts=snakecase.split('_')
+    camelcase=parts[0]+''.join(x.capitalize() for x in parts [1:])
+    return camelcase
+with open("lab 5/row.txt","r") as file:
+    snakecasestr=file.read()
+camelcasestr=snaketocamel(snakecasestr)
+print(camelcasestr)
+
+
+#ex 8
+import re
+
+with open("lab 5/row.txt", "r") as file:
+    ss = file.read()
+
+result = re.findall('[A-Z][^A-Z]*', ss)
+print(result)
+
+#ex 9
+import re
+with open("lab 5/row.txt","r") as file:
+    ss=file.read()
+result=''.(joinre.findall('[A-Z][^A-Z]*',ss))
+print(result)
+
+#ex 10
+
+def camel_to_snake(camelcase):
+    snakecase = ''
+    for char in camelcase:
+        if char.isupper():
+            snakecase += '_' + char.lower()
+        else:
+            snakecase += char
+    if snakecase.startswith('_'):
+        snakecase = snakecase[1:]
+    return snakecase
+
+with open('row.txt', 'r') as file:
+    lines = file.readlines()
+
+
+for line in lines:
+    snake_line = camel_to_snake(line.strip())
+    print(snake_line)
+
+    with open('row_snake.txt', 'a') as file:
+        file.write(snake_line + '\n')
