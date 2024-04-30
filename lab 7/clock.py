@@ -6,9 +6,9 @@ screen = pygame.display.set_mode((500, 400))
 running = True 
  
 clock = pygame.time.Clock() 
-main_clock = pygame.image.load("main-clock.png") 
-minute_hand = pygame.image.load(("right-hand.png")) 
-second_hand = pygame.image.load(("left-hand.png")) 
+main_clock = pygame.image.load("lab 7/main-clock.png") 
+minute_hand = pygame.image.load(("lab 7/right-hand.png")) 
+second_hand = pygame.image.load(("lab 7/left-hand (1).png")) 
 main_clock = pygame.transform.scale(main_clock, (500, 400)) 
 minute_hand = pygame.transform.scale(minute_hand, (500, 450)) 
 second_hand = pygame.transform.scale(second_hand, (30, 500)) 

@@ -113,7 +113,7 @@ def run_game():
             del snake_pixels[0]
             
         for pixel in snake_pixels[:-1]:
-            if pixel == [x,y]:
+            if pixel == [x,y]:  
                 game_close = True
         
         draw_snake(snake_size, snake_pixels)

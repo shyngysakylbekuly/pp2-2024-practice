@@ -30,7 +30,7 @@ font_small = pygame.font.SysFont("Verdana", 20)
 collected_coins = pygame.font.SysFont("Verdana", 20)
 game_over = font.render("Game Over", True, BLACK)
  
-background = pygame.image.load("background.png")
+background = pygame.image.load("lab 8/background.png")
 background = pygame.transform.scale(background, (SCREEN_WIDTH,SCREEN_HEIGHT))
  
 #Create a white screen 
@@ -41,7 +41,7 @@ pygame.display.set_caption("Game")
 class Enemy(pygame.sprite.Sprite):
       def __init__(self):
         super().__init__() 
-        self.image = pygame.image.load("Enemy.png")
+        self.image = pygame.image.load("lab 8/Enemy.png")
         self.image = pygame.transform.scale(self.image, (80,90))
         self.rect = self.image.get_rect()
         self.rect.center = (random.randint(40, SCREEN_WIDTH-40), 0)  
@@ -57,7 +57,7 @@ class Enemy(pygame.sprite.Sprite):
 class Coin(pygame.sprite.Sprite):
       def __init__(self):
         super().__init__() 
-        self.image = pygame.image.load("coin.png")
+        self.image = pygame.image.load("lab 8/coin.png")
         self.image = pygame.transform.scale(self.image, (20,20))
         self.rect = self.image.get_rect()
         self.rect.center=(random.randint(40,SCREEN_WIDTH-40),0) 
@@ -75,7 +75,7 @@ class Coin(pygame.sprite.Sprite):
 class Player(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__() 
-        self.image = pygame.image.load("Player.png")
+        self.image = pygame.image.load("lab 8/Player.png")
         self.image = pygame.transform.scale(self.image, (80,90))
         self.rect = self.image.get_rect()
         self.rect.center = (160, 520)
